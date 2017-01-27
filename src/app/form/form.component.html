@@ -47,10 +47,10 @@
         </md-card-header>
         <form>
           <div fxLayout="row" fxLayoutAlign="space-around center">
-            <div class="form-column" fxFlex="10">
+            <div class="form-column" fxFlex="20">
               <img src="/assets/prostate.png" alt="">
             </div>
-            <div class="form-column" fxFlex="50">
+            <div class="form-column" fxFlex="40">
               <md-grid-list cols="5" rowHeight="40px">
                 <md-grid-tile *ngFor="let p of positions" [colspan]="p.cols" [rowspan]="p.rows" [style.background]="p.color">
                   {{p.text}}
@@ -98,10 +98,10 @@
         </md-card-header>
         <form>
           <div fxLayout="row" fxLayoutAlign="space-around center">
-            <div class="form-column" fxFlex="10">
+            <div class="form-column" fxFlex="20">
               <img src="/assets/prostate.png" alt="">
             </div>
-            <div class="form-column" fxFlex="50">
+            <div class="form-column" fxFlex="40">
               <md-grid-list cols="5" rowHeight="40px">
                 <md-grid-tile *ngFor="let p of positions" [colspan]="p.cols" [rowspan]="p.rows" [style.background]="p.color">
                   {{p.text}}

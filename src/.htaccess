@@ -1,0 +1,7 @@
+AuthUserFile /srv/data/web/vhosts/keydiag.healthfactory.io/htdocs/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Restricted Access"
+AuthType Basic
+<limit GET>
+require valid-user
+</Limit> 
