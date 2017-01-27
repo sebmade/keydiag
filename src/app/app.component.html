@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <button class="app-icon-button" [routerLink]="['/home']">
+    <i class="material-icons app-toolbar-menu">menu</i>
+  </button>
+  <h1>
+    &nbsp;KeyDiag
+  </h1>
+  <span class="app-toolbar-filler"></span>
+</md-toolbar>
+<router-outlet></router-outlet>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { PanelComponent } from './panel/panel.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'keydiag';
+
+  @ViewChild(PanelComponent)
+  private editPanel: PanelComponent;
+
+
+  test(event) {
+    console.log(event);
+    this.editPanel.open(event);
+  }
 }

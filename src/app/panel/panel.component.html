@@ -1,0 +1,11 @@
+<div class="o-panel" [class.as--open]="isOpen" [style.width]="options.size">
+    <div class="o-panel__header">
+        <div class="o-panel__title">{{ options.title }}</div>
+        <button (click)="onClose($event)" class="o-panel__close">
+            &times;
+        </button>
+    </div>
+    <div class="o-panel__body">
+      <ng-content></ng-content>
+    </div>
+</div>

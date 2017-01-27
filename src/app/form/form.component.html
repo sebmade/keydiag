@@ -1,0 +1,133 @@
+<div [ngSwitch]="formType">
+  <div *ngSwitchCase="'taille'" class="flex-container" fxLayout="column" fxLayoutAlign="center center">
+    <div class="flex-item" fxFlex="50%">
+      <md-card>
+        <md-card-header>
+          <md-card-title>
+            <h1>Taille de la prostate</h1>
+          </md-card-title>
+        </md-card-header>
+        <form>
+          <div class="flex-container" fxLayout="column">
+            <div class="flex-item">
+              <md-input-container>
+                <input md-input placeholder="Diametre antéro-postérieur (cm)" [(ngModel)]="model.data.taille.dap" (change)="changeData()" name="dap">
+              </md-input-container>
+            </div>
+            <div class="flex-item">
+              <md-input-container>
+                <input md-input placeholder="Diametre transverse (cm)" [(ngModel)]="model.data.taille.dt" (change)="changeData()" name="dt">
+              </md-input-container>
+            </div>
+            <div class="flex-item">
+              <md-input-container>
+                <input md-input placeholder="Hauteur (cm)" [(ngModel)]="model.data.taille.h" (change)="changeData()" name="h">
+              </md-input-container>
+            </div>
+            <div class="flex-item">
+              <md-input-container>
+                <input md-input placeholder="Volume (cm3)" [(ngModel)]="model.data.taille.v" (change)="changeData()" name="v">
+              </md-input-container>
+            </div>
+          </div>
+        </form>
+      </md-card>
+    </div>
+  </div>
+  <div *ngSwitchCase="'zt'" class="flex-container" fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="100">
+      <md-card>
+        <md-card-header>
+          <md-card-title>
+            <h1>ZT</h1>
+          </md-card-title>
+        </md-card-header>
+        <form>
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <div class="form-column" fxFlex="10">
+              <img src="/assets/prostate.png" alt="">
+            </div>
+            <div class="form-column" fxFlex="50">
+              <md-grid-list cols="5" rowHeight="40px">
+                <md-grid-tile *ngFor="let p of positions" [colspan]="p.cols" [rowspan]="p.rows" [style.background]="p.color">
+                  {{p.text}}
+                </md-grid-tile>
+              </md-grid-list>
+            </div>
+            <div class="form-column" fxFlex="40" fxLayout="column" style="height: 200px;">
+              <div fxFlex="33">
+                <md-select placeholder="T2" name="t2" [(ngModel)]="model.data.zt.t2" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let t2 of t2zt" [value]="t2">
+                    {{t2}}
+                  </md-option>
+                </md-select>
+              </div>
+              <div fxFlex="33">
+                <md-select placeholder="Diffusion" name="diffusion" [(ngModel)]="model.data.zt.diffusion" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let d of diffusion" [value]="d">
+                    {{d}}
+                  </md-option>
+                </md-select>
+              </div>
+              <div fxFlex="33">
+                <md-select placeholder="Perfusion" name="perfusion" [(ngModel)]="model.data.zt.perfusion" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let p of perfusion" [value]="p">
+                    {{p}}
+                  </md-option>
+                </md-select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </md-card>
+    </div>
+  </div>
+  <div *ngSwitchCase="'zp'" class="flex-container" fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxFlex="100">
+      <md-card>
+        <md-card-header>
+          <md-card-title>
+            <h1>ZT</h1>
+          </md-card-title>
+        </md-card-header>
+        <form>
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+            <div class="form-column" fxFlex="10">
+              <img src="/assets/prostate.png" alt="">
+            </div>
+            <div class="form-column" fxFlex="50">
+              <md-grid-list cols="5" rowHeight="40px">
+                <md-grid-tile *ngFor="let p of positions" [colspan]="p.cols" [rowspan]="p.rows" [style.background]="p.color">
+                  {{p.text}}
+                </md-grid-tile>
+              </md-grid-list>
+            </div>
+            <div class="form-column" fxFlex="40" fxLayout="column" style="height: 200px;">
+              <div fxFlex="33">
+                <md-select placeholder="T2" name="t2" [(ngModel)]="model.data.zp.t2" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let t2 of t2zp" [value]="t2">
+                    {{t2}}
+                  </md-option>
+                </md-select>
+              </div>
+              <div fxFlex="33">
+                <md-select placeholder="Diffusion" name="diffusion" [(ngModel)]="model.data.zp.diffusion" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let d of diffusion" [value]="d">
+                    {{d}}
+                  </md-option>
+                </md-select>
+              </div>
+              <div fxFlex="33">
+                <md-select placeholder="Perfusion" name="perfusion" [(ngModel)]="model.data.zp.perfusion" (ngModelChange)="changeData()">
+                  <md-option *ngFor="let p of perfusion" [value]="p">
+                    {{p}}
+                  </md-option>
+                </md-select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </md-card>
+    </div>
+  </div>
+</div>

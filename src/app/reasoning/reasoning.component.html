@@ -1,0 +1,59 @@
+<md-card>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #29abe2;
+        }
+        
+        .cls-2 {
+          fill: #0071bc;
+        }
+        
+        .cls-3 {
+          fill: #025aac;
+        }
+
+        .over {
+          fill: #42d7f4;
+        }
+
+        .start {
+          fill: #f4ce42;
+        }
+
+        .finished {
+          fill: #42f4a1;
+        }
+
+      </style>
+    </defs>
+    <g id="extension" data-name="Calque 1">
+      <rect class="cls-1" x="568.5" y="559.92" width="985.5" height="304.26" rx="6" ry="6"/>
+    </g>
+    <g id="diagnostic" data-name="Calque 2">
+      <rect class="cls-2" x="568.5" y="238.39" width="985.5" height="304.26" rx="6" ry="6" />
+    </g>
+    <g id="autres" data-name="Calque 3">
+      <rect [ngClass]="zpClass" x="655.77" y="287.49" width="206.07" height="206.07" rx="3" ry="3" (click)="open('zp')" (mouseover)="highlightZp(true)" (mouseout)="highlightZp(false)"/>
+    </g>
+    <g id="zp" data-name="Calque 4">
+      <rect [ngClass]="autresClass" x="1235.2" y="287.49" width="206.07" height="206.07" rx="3" ry="3" (click)="open('autres')" (mouseover)="highlightAutres(true)" (mouseout)="highlightAutres(false)"/>
+    </g>
+    <g id="zt" data-name="Calque 5">
+      <rect [ngClass]="ztClass" x="947.91" y="287.49" width="206.07" height="206.07" rx="3" ry="3" (click)="open('zt')" (mouseover)="highlightZt(true)" (mouseout)="highlightZt(false)"/>
+    </g>
+    <g id="t" data-name="Calque 6">
+      <rect [ngClass]="tClass" x="655.77" y="609.02" width="206.07" height="206.07" rx="3" ry="3" (click)="open('t')" (mouseover)="highlightT(true)" (mouseout)="highlightT(false)"/>
+    </g>
+    <g id="taille" data-name="Calque 7">
+      <rect [ngClass]="tailleClass" x="299.11" y="286.1" width="206.07" height="206.07" rx="3" ry="3" (click)="open('taille')" (mouseover)="highlightTaille(true)" (mouseout)="highlightTaille(false)"/>
+    </g>
+    <g id="n" data-name="Calque 8">
+      <rect [ngClass]="nClass" x="947.91" y="609.02" width="206.07" height="206.07" rx="3" ry="3" (click)="open('n')" (mouseover)="highlightN(true)" (mouseout)="highlightN(false)"/>
+    </g>
+    <g id="m" data-name="Calque 9">
+      <rect [ngClass]="mClass" x="1235.2" y="609.02" width="206.07" height="206.07" rx="3" ry="3" (click)="open('m')" (mouseover)="highlightM(true)" (mouseout)="highlightM(false)"/>
+    </g>
+  </svg>
+</md-card>
