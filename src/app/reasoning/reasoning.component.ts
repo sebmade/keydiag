@@ -34,6 +34,28 @@ export class ReasoningComponent implements OnInit {
     this.router.navigate(['/form', id]);
   }
 
+  toggleAutres(event) {
+    if (event.source.checked) {
+      this.autresClass = this.model.data.autres.class = 'full';
+    } else {
+      this.autresClass = this.model.data.autres.class = 'cls-3';
+    }
+  }
+  toggleZp(event) {
+    if (event.source.checked) {
+      this.zpClass = this.model.data.zp.class = 'full';
+    } else {
+      this.zpClass = this.model.data.zp.class = 'cls-3';
+    }
+  }
+  toggleZt(event) {
+    if (event.source.checked) {
+      this.ztClass = this.model.data.zt.class = 'full';
+    } else {
+      this.ztClass = this.model.data.zt.class = 'cls-3';
+    }
+  }
+
   highlightZt(flag) {
     this.ztClass = this.highlight(flag, this.model.data.zt.class);
   }

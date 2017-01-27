@@ -1,2 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.md-button-toggle-checked .md-button-toggle-label-content {
+    background-color: #e0e0e0;
+}
+
+.md-button-toggle-label-content {
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 16px;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #025aac;
+}

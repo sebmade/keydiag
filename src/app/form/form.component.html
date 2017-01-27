@@ -41,6 +41,9 @@
           <md-card-title>
             <h1>ZT</h1>
           </md-card-title>
+          <a (click)="infoPanel.open($event)">
+            <md-icon>info</md-icon>
+          </a>
         </md-card-header>
         <form>
           <div fxLayout="row" fxLayoutAlign="space-around center">
@@ -87,8 +90,11 @@
       <md-card>
         <md-card-header>
           <md-card-title>
-            <h1>ZT</h1>
+            <h1>ZP</h1>
           </md-card-title>
+          <a (click)="infoPanel.open($event)">
+            <md-icon>info</md-icon>
+          </a>
         </md-card-header>
         <form>
           <div fxLayout="row" fxLayoutAlign="space-around center">
@@ -131,3 +137,36 @@
     </div>
   </div>
 </div>
+
+<!-- Panel info -->
+<keydiag-panel #infoPanel
+          [options]="{
+          title: 'Info',
+          size: '450px'
+        }">
+<div [ngSwitch]="formType">
+  <div *ngSwitchCase="'zt'" class="flex-container" fxLayout="column" fxLayoutAlign="center center">
+    <div>
+      <img src="/assets/zt-info.png" alt="">
+    </div>
+    <div>
+      <img src="/assets/diffusion.png" alt="">
+    </div>
+    <div>
+      <img src="/assets/perfusion.png" alt="">
+    </div>
+  </div>
+  <div *ngSwitchCase="'zp'" class="flex-container" fxLayout="column" fxLayoutAlign="center center">
+    <div>
+      <img src="/assets/zp-info.png" alt="">
+    </div>
+    <div>
+      <img src="/assets/diffusion.png" alt="">
+    </div>
+    <div>
+      <img src="/assets/perfusion.png" alt="">
+    </div>
+  </div>
+</div>
+
+</keydiag-panel>
