@@ -70,7 +70,7 @@ const getResizeCursor: Function = (edges: Edges): string => {
 
 
 @Directive({
-  selector: '[kdResizable]'
+  selector: '[resizable]'
 })
 export class ResizableDirective implements OnInit, OnDestroy {
   private resizeEdges = { left: true, bottom: true, top: true, right: true };
@@ -104,7 +104,6 @@ export class ResizableDirective implements OnInit, OnDestroy {
       this.renderer.setElementStyle(this.elm.nativeElement, 'cursor', cursor);
 
     });
-
 
     let ry = parseFloat(this.elm.nativeElement.getAttribute('ry'));
     let rx = parseFloat(this.elm.nativeElement.getAttribute('rx'));

@@ -14,6 +14,7 @@ import { NgModule } from '@angular/core';
 import { PanelComponent } from './panel/panel.component';
 import { ReasoningComponent } from './reasoning/reasoning.component';
 import { ResizableDirective } from './resizable.directive';
+import { SchemaComponent } from './schema/schema.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ResizableDirective } from './resizable.directive';
     FormComponent,
     ResizableDirective,
     EllipseMarkerComponent,
-    DraggableDirective
+    DraggableDirective,
+    SchemaComponent
   ],
   imports: [
     BrowserModule,

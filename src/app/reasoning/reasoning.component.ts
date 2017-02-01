@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reasoning',
-  entryComponents: [EllipseMarkerComponent],
   templateUrl: './reasoning.component.html',
   styleUrls: ['./reasoning.component.css']
 })
@@ -18,9 +17,8 @@ export class ReasoningComponent implements OnInit {
   private nClass: string;
   private mClass: string;
   private tailleClass: string;
-  @ViewChild('svgSchema', {read: ViewContainerRef}) container: ViewContainerRef;
 
-  constructor(private router: Router, private model: ModelService, private resolver: ComponentFactoryResolver) {
+  constructor(private router: Router, private model: ModelService) {
     this.ztClass = model.data.zt.class;
     this.zpClass = model.data.zp.class;
     this.autresClass = model.data.autres.class;
@@ -83,11 +81,5 @@ export class ReasoningComponent implements OnInit {
   highlight(flag, defaultClass) {
     return (flag) ? 'over' : defaultClass;
   }
-
-  addEllipse(event) {
-    let marker = this.resolver.resolveComponentFactory(EllipseMarkerComponent).create(this.container.injector, null, 'g[id=ellipse-marker]');
-    this.container.insert(marker.hostView);
-  }
-
 
 }

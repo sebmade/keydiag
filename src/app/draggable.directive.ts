@@ -32,32 +32,30 @@ export class DraggableDirective implements OnInit {
   }
 
   ngOnInit() {
-    let svg = this.element.nativeElement.ownerSVGElement;
-    this.mousedrag = this.mousedown.map(event => {
-      let pt = svg.createSVGPoint();
-      pt.x = event.clientX;
-      pt.y = event.clientY;
-      pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-      return {
-        left: pt.x - parseFloat(this.element.nativeElement.getAttribute('cx')),
-        top: pt.y - parseFloat(this.element.nativeElement.getAttribute('cy'))
-      };
-    }).flatMap(imageOffset => this.mousemove.map(pos => {
-      let pt = svg.createSVGPoint();
-      pt.x = pos.clientX;
-      pt.y = pos.clientY;
-      pt = pt.matrixTransform(svg.getScreenCTM().inverse());
-      console.log('offset', imageOffset);
-      return {
-        top: pt.y - imageOffset.top,
-        left: pt.x - imageOffset.left
-      };
-    }).takeUntil(this.mouseup));
+    const svg = this.element.nativeElement.ownerSVGElement;
+    const convertCoords = (x, y) => {
+      const pt = svg.createSVGPoint();
+      pt.x = x;
+      pt.y = y;
+      return pt.matrixTransform(svg.getScreenCTM().inverse());
+    };
 
-    this.mousedrag.subscribe(pos => {
-      console.log('drag', pos);
-      this.element.nativeElement.setAttribute('cy', pos.top);
-      this.element.nativeElement.setAttribute('cx', pos.left);
+    this.mousedrag = this.mousedown.map(event => {
+      const pt = convertCoords(event.clientX, event.clientY);
+      return {
+        x: pt.x - parseFloat(this.element.nativeElement.getAttribute('cx')),
+        y: pt.y - parseFloat(this.element.nativeElement.getAttribute('cy'))
+      };
+    }).flatMap(offset => this.mousemove.map(pos => {
+      const pt = convertCoords(pos.clientX, pos.clientY);
+      return {
+        y: pt.y - offset.y,
+        x: pt.x - offset.x
+      };
+    }).takeUntil(this.mouseup))
+    .subscribe(pos => {
+      this.element.nativeElement.setAttribute('cy', pos.y);
+      this.element.nativeElement.setAttribute('cx', pos.x);
     });
   }
 
