@@ -1,4 +1,5 @@
 <md-card>
+  <button md-button (click)="addEllipse($event)">test</button>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
     <defs>
       <style>
@@ -28,7 +29,9 @@
 
       </style>
     </defs>
-    <g id="extension" data-name="Calque 1">
+    <ellipse kdResizable draggable stroke="#000000" fill="#FF0000" stroke-width="5" cx="100" cy="278.5" id="svg_10" rx="25.5" ry="29.5"/>
+    <g id="ellipse-marker"></g>
+    <g #svgSchema id="extension" data-name="Calque 1">
       <rect class="cls-1" x="568.5" y="559.92" width="985.5" height="304.26" rx="6" ry="6"/>
     </g>
     <g id="diagnostic" data-name="Calque 2">
