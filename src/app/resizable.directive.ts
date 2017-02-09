@@ -74,19 +74,8 @@ const getResizeCursor: Function = (edges: Edges): string => {
 })
 export class ResizableDirective implements OnInit, OnDestroy {
   private resizeEdges = { left: true, bottom: true, top: true, right: true };
-  /**
-  * @private
-  */
   public mouseup: Subject<any> = new Subject();
-
-  /**
-   * @private
-   */
   public mousedown: Subject<any> = new Subject();
-
-  /**
-   * @private
-   */
   public mousemove: Subject<any> = new Subject();
 
   constructor(private renderer: Renderer, public elm: ElementRef) { }
@@ -107,7 +96,7 @@ export class ResizableDirective implements OnInit, OnDestroy {
 
     let ry = parseFloat(this.elm.nativeElement.getAttribute('ry'));
     let rx = parseFloat(this.elm.nativeElement.getAttribute('rx'));
-    let lastCoords: {mouseX: number, mouseY: number};
+    let lastCoords: { mouseX: number, mouseY: number };
     const getDiff: Function = moveCoords => {
       return {
         offsetX: moveCoords.mouseX - lastCoords.mouseX,
@@ -146,7 +135,7 @@ export class ResizableDirective implements OnInit, OnDestroy {
         lastCoords = mouseCoords;
         ry = parseFloat(this.elm.nativeElement.getAttribute('ry'));
         rx = parseFloat(this.elm.nativeElement.getAttribute('rx'));
-        }
+      }
     });
 
   }

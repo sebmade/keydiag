@@ -1,0 +1,26 @@
+md-list-item {
+  width: 100%;
+  background-color: #ffd740;
+  border-top: 0.5px solid;
+}
+
+md-list-item:hover {
+  background-color: #fbefab;
+}
+
+.item-selected {
+  background-color: #94ffab;
+}
+
+.md-list-item {
+  height: 35px;
+}
+
+md-list-item h4 {
+  white-space: initial;
+  font-size: 12px;
+}
+
+[md-fab] {
+  margin-bottom: 10px;
+}

@@ -4,14 +4,30 @@
       <md-card-title>
         <h1>SCHEMA</h1>
       </md-card-title>
-      <a (click)="infoPanel.open($event)">
+      <a>
         <md-icon>info</md-icon>
       </a>
     </md-card-header>
-    <div fxLayout="row" fxLayoutAlign="space-around center">
-      <div fxFlex="20">
+    <div fxLayout="row" fxLayoutAlign="space-around top">
+      <div fxFlex="40">
+        <md-list *ngIf="showDiagList">
+          <h3 md-subheader>T2</h3>
+          <md-list-item *ngFor="let t of t2zt">
+            <h4 md-line>{{t}}</h4>
+          </md-list-item>
+          <md-divider></md-divider>
+          <h3 md-subheader>Diffusion</h3>
+            <md-list-item *ngFor="let d of diffusion">
+            <h4 md-line>{{d}}</h4>
+          </md-list-item>
+          <md-divider></md-divider>
+          <h3 md-subheader>Perfusion</h3>
+            <md-list-item *ngFor="let p of perfusion">
+            <h4 md-line>{{p}}</h4>
+          </md-list-item>
+        </md-list>
       </div>
-      <div fxFlex="60">
+      <div fxFlex="50">
         <svg version="1.1" id="svg8" sodipodi:docname="prostate_clic et localise.svg" inkscape:version="0.92.0 r15299" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
           xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
           xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns="http://www.w3.org/2000/svg"
@@ -124,10 +140,18 @@
           <g #svgSchema id="ellipse-marker"></g>
         </svg>
       </div>
-      <div fxFlex="20" fxLayoutAlign="bottom">
-        <button md-fab (click)="addEllipse($event)">
-          <md-icon>add</md-icon>
-        </button>
+      <div fxFlex="10">
+        <div fxLayout="column" fxLayoutAlign="space-around end">
+          <button md-fab (click)="addEllipse($event)">
+            <md-icon>add</md-icon>
+          </button>
+          <button md-fab (click)="add3Ellipse($event)">
+            <md-icon>add_circle_outline</md-icon>
+          </button>
+          <button *ngIf="selection" md-fab (click)="addEllipse($event)">
+            <md-icon>delete</md-icon>
+          </button>
+        </div>
       </div>
     </div>
   </md-card>
