@@ -34,7 +34,7 @@ import { SchemaComponent } from './schema/schema.component';
     CommonModule,
     AppRoutingModule,
     MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule
   ],
   providers: [ModelService],
   bootstrap: [AppComponent]
