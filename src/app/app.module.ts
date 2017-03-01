@@ -15,6 +15,7 @@ import { PanelComponent } from './panel/panel.component';
 import { ReasoningComponent } from './reasoning/reasoning.component';
 import { ResizableDirective } from './resizable.directive';
 import { SchemaComponent } from './schema/schema.component';
+import { Schema2Component } from './schema2/schema2.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SchemaComponent } from './schema/schema.component';
     ResizableDirective,
     EllipseMarkerComponent,
     DraggableDirective,
-    SchemaComponent
+    SchemaComponent,
+    Schema2Component
   ],
   imports: [
     BrowserModule,

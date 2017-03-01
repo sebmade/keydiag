@@ -1,0 +1,27 @@
+<h1>Exemple de schéma dynamique avec SVG</h1>
+<p>L'image et les zones détourées (avec une valeur et titre) sont des propriétés modifiables du composant<br/>Le détourage des zones est obtenu avec Inkscape<br/>Les zones détourées sont mises en évidence au survol (filtre gris), et sont sélectionnables (filtre rouge)</p>
+<p>Options : 
+    <md-checkbox [(ngModel)]="multipleSelection">Sélection multiple</md-checkbox>
+    <md-checkbox [(ngModel)]="withList">Avec liste</md-checkbox>
+</p>
+<table>
+    <tr>
+        <td *ngIf="schema2">
+            <svg style="border:1px dashed #ccc; width: 550; height: 580; cursor: default">
+                <g>
+                    <image [attr.xlink:href]="schema2.href" />
+                </g>
+                <g>
+                    <path *ngFor="let area of schema2.schema2Areas" [attr.id]="area.id" [attr.class]="isAreaSelected(area.id)?'selarea':'area'" [attr.d]="area.d" (click)="onAreaClick(area.id)">
+                        <title>{{area.title}}</title>
+                    </path>
+                </g>
+            </svg>
+        </td>
+        <td *ngIf="withList">
+            <div *ngFor="let area of schema2.schema2Areas" [attr.id]="area.id" [attr.class]="isAreaSelected(area.id)?'sellistitem':'listitem'" (click)="onAreaClick(area.id)">
+                {{area.title}}
+            </div>
+        </td>
+    </tr>
+</table>

@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
 .md-button-toggle-checked .md-button-toggle-label-content {
